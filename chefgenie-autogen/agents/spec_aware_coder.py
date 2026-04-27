@@ -1,6 +1,7 @@
 import asyncio
 from autogen_agentchat.agents import AssistantAgent
 from autogen_agentchat.teams import RoundRobinGroupChat
+from autogen_agentchat.ui import Console
 from autogen_agentchat.conditions import MaxMessageTermination
 from .config import get_model_client
 
@@ -21,5 +22,5 @@ class SpecAwareCoder:
         prompt = f"Generate Python code for the following specification:\n\n{spec_content}"
         termination = MaxMessageTermination(1)
         team = RoundRobinGroupChat([self.agent], termination_condition=termination)
-        result = await team.run(task=prompt)
+        result = await Console(team.run_stream(task=prompt))
         return result.messages[-1].content

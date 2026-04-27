@@ -1,6 +1,7 @@
 import os
 import asyncio
 from autogen_agentchat.teams import RoundRobinGroupChat
+from autogen_agentchat.ui import Console
 from autogen_agentchat.conditions import TextMentionTermination, MaxMessageTermination
 from agents.collaborative_agents import get_coder_agent, get_validator_agent
 
@@ -23,7 +24,7 @@ async def process_spec(spec_path, generated_dir):
     prompt = f"Tugas: Implementasikan spesifikasi ini ke dalam kode Python.\n\nSpesifikasi:\n{spec_content}"
     
     # Jalankan kolaborasi
-    result = await team.run(task=prompt)
+    result = await Console(team.run_stream(task=prompt))
     
     # Ambil pesan terakhir dari Coder (biasanya sebelum atau sesudah VALID)
     # Kita cari pesan yang mengandung code block
