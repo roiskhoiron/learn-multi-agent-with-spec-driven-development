@@ -4,7 +4,7 @@ Halo! Ini adalah proyek keren tentang **Robot Koki** yang bisa membuat kodenya s
 
 ---
 
-## 👶 Penjelasan Sederhana (Untuk Anak SD)
+## 👶 Penjelasan Sederhana
 
 Bayangkan kamu punya dua robot pintar:
 
