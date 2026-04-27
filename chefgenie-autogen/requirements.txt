@@ -1,0 +1,6 @@
+pyautogen
+pyyaml
+python-dotenv
+pydantic
+autogen_agentchat
+autogen-ext[openai]

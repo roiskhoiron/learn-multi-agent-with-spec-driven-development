@@ -1,0 +1,16 @@
+# Environments
+venv/
+.env
+chefgenie-autogen/.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store

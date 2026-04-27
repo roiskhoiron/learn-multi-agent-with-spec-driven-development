@@ -1,0 +1,23 @@
+Generate Python code for the following specification:
+
+name: PantryParser
+description: Parses raw text input into a structured list of pantry items with quantities and units.
+version: 1.0.0
+input:
+  type: string
+  description: Raw text of pantry items (e.g., "3 eggs, 200g flour, milk")
+output:
+  type: array
+  items:
+    type: object
+    properties:
+      name: {type: string}
+      quantity: {type: number}
+      unit: {type: string}
+    required: [name, quantity, unit]
+test_cases:
+  - input: "3 eggs, 200g flour, 1 liter milk"
+    expected_output:
+      - {name: "eggs", quantity: 3, unit: "count"}
+      - {name: "flour", quantity: 200, unit: "g"}
+      - {name: "milk", quantity: 1, unit: "liter"}
